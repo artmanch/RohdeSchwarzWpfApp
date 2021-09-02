@@ -2,7 +2,7 @@
 {
     public interface IParser
     {
-        public (long frequency, Metrics metric) Parse(string value);
+        public (double frequency, Metrics metric) Parse(string value);
     }
 
     public enum Metrics
