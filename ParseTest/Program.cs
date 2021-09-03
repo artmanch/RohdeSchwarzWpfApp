@@ -1,6 +1,4 @@
-﻿using System;
-using System.Globalization;
-using ControlLibrary.Services;
+﻿using ControlLibrary.Services;
 using ControlLibrary.Services.Interfaces;
 
 namespace ParseTest
@@ -11,7 +9,7 @@ namespace ParseTest
         {
             IParser parser = new FrequencyParser();
 
-            var value = parser.Parse("123421,   214   М   ");
+            var value = parser.Parse("  123421.  Мц ");
 
         }
     }

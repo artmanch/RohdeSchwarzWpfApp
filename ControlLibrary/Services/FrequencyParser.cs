@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
-using System.Windows.Controls;
-using System.Windows.Navigation;
 using ControlLibrary.Services.Interfaces;
 
 namespace ControlLibrary.Services
@@ -37,8 +33,8 @@ namespace ControlLibrary.Services
 
             var stringMetric = string.Join("", cValue[index..]);
 
-            //меняем разделитель ',' дробной части числа на '.'
-            var ruCultureSeparatedFloatValues = stringFrequency.Split(',', StringSplitOptions.RemoveEmptyEntries);
+            //разбиваем строку на целую и дробную часть и слепливаем с разделителем "точка"
+            var ruCultureSeparatedFloatValues = stringFrequency.Split(new char[] { ',', '.'}, StringSplitOptions.RemoveEmptyEntries);
             stringFrequency = string.Join(".", ruCultureSeparatedFloatValues);
 
             double.TryParse(stringFrequency, NumberStyles.Any, CultureInfo.InvariantCulture, out frequency);
@@ -47,8 +43,10 @@ namespace ControlLibrary.Services
             return stringMetric switch
             {
                 "кгц" => (frequency, Metrics.kHz),
+                "кц" => (frequency, Metrics.kHz),
                 "к" => (frequency, Metrics.kHz),
                 "мгц" => (frequency, Metrics.MHz),
+                "мц" => (frequency, Metrics.MHz),
                 "м" => (frequency, Metrics.MHz),
                 _ => (frequency, Metrics.Hz)
             };

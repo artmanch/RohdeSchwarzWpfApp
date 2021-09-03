@@ -8,7 +8,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <contr:FrequencyControl Margin="235,174,234,192">
-        </contr:FrequencyControl>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <contr:FrequencyControl/>
     </Grid>
 </Window>

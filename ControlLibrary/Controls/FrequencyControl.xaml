@@ -8,6 +8,6 @@
              Height="50" Width="331">
     <DockPanel VerticalAlignment="Center">
         <TextBlock Text="Введите частоту:" FontSize="16" Margin="5 0"/>
-        <TextBox Name="FrequencyTextBox" FontSize="16" Margin="5 0" Text="" TextAlignment="Right"/>        
+        <TextBox Name="FrequencyTextBox" FontSize="16" Margin="5 0" Text="" TextAlignment="Right" KeyUp="FrequencyConfirmed"/>        
     </DockPanel>
 </UserControl>
