@@ -4,6 +4,9 @@ using System.Runtime.CompilerServices;
 
 namespace RohdeSchwarzWpfApp.ViewModels
 {
+    /// <summary>
+    /// ViewModel для тестирования привязки свойства Frequency контрола FrequencyControl
+    /// </summary>
     public class MainViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -23,20 +26,6 @@ namespace RohdeSchwarzWpfApp.ViewModels
 
                 _Frequency = value;
                 Debug.WriteLine($"Frequency ViewModel Value = {_Frequency}");
-                OnPropertyChanged();
-            }
-        }
-
-        private string _Title = "Test";
-        public string Title
-        {
-            get => _Title;
-            set
-            {
-                if(Equals(_Title, value)) return;
-
-                _Title = value;
-                Debug.WriteLine("Title ViewModel");
                 OnPropertyChanged();
             }
         }
