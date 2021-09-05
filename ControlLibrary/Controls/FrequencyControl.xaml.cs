@@ -84,19 +84,19 @@ namespace ControlLibrary.Controls
             switch(metric)
             {
                 case Metrics.Hz:
-                    if(frequency < 1000) return $"{frequency:f4} Гц";
-                    else if(frequency > 1000 && frequency < 1000000) return $"{frequency / 1000:f4} кГц";
-                    else return $"{frequency / 1000000:f4} МГц";
+                    if(frequency < 1000) return $"{frequency} Гц";
+                    else if(frequency >= 1000 && frequency < 1000000) return $"{frequency / 1000} кГц";
+                    else return $"{frequency / 1000000} МГц";
 
                 case Metrics.kHz:
-                    if(frequency < 1000 && frequency > 1) return $"{frequency:f4} кГц";
-                    else if(frequency > 1000) return $"{frequency / 1000:f4} МГц";
-                    else return $"{frequency * 1000:f4} Гц";
+                    if(frequency < 1000 && frequency >= 1) return $"{frequency} кГц";
+                    else if(frequency >= 1000) return $"{frequency / 1000} МГц";
+                    else return $"{frequency * 1000} Гц";
 
                 case Metrics.MHz:
-                    if(frequency > 1) return $"{frequency:f4} МГц";
-                    else if(frequency < 1 && frequency > 0.001) return $"{frequency * 1000:f4} кГц";
-                    else return $"{frequency * 1000000:f4} Гц";
+                    if(frequency >= 1) return $"{frequency} МГц";
+                    else if(frequency < 1 && frequency >= 0.001) return $"{frequency * 1000} кГц";
+                    else return $"{frequency * 1000000} Гц";
 
                 default: throw new InvalidOperationException("Не существующая операция");
             }
